@@ -5,20 +5,6 @@ PROC SCREW_N DISPLON
 ;;***************************
 
 S_PAR_INI
-IF (R275<=R274)OR(R275>=R276)
-    MSG("进刀补偿量过大")
-    G4F10
-    M30
-    GOTOF G_ENDING
-ELSE
-    R273=R273+R275
-    R275=0
-ENDIF
-IF ((PROCESS[4]-R273/2)>INI[10])
-    MSG("累计刀补量R273过大")
-    G4F9999
-    STOPRE
-ENDIF
 
 IF (DRESSER[6]==1)OR(DRESSER[6]==2)OR(DRESSER[6]==3)
     GOTOF G_ENDING
@@ -59,6 +45,21 @@ ELSE
     IF DIY[1]==0
         RET
     ENDIF
+ENDIF
+
+IF (R275<=R274)OR(R275>=R276)
+    MSG("进刀补偿量过大")
+    G4F10
+    M30
+    GOTOF G_ENDING
+ELSE
+    R273=R273+R275
+    R275=0
+ENDIF
+IF ((PROCESS[4]-R273/2)>INI[10])
+    MSG("累计刀补量R273过大")
+    G4F9999
+    STOPRE
 ENDIF
 
 STOPRE
