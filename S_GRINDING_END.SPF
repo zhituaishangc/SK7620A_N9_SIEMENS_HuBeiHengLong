@@ -16,9 +16,7 @@ IF PROCESS[0]==0
     M57
     M61
     IF (INI[36]==0) OR (INI[36]==2)
-        IF GRIND[1]==1
-			M15
-		ELSE
+        ;M15
     ELSE
         M1=5
     ENDIF

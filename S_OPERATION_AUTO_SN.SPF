@@ -181,7 +181,7 @@ ELSE
         G4 F0.2
     ENDWHILE
     MSG("测头接近工件中")
-    G90 G01 X=INI[10] F=INI[55]
+    G90 G01 X=INI[10]-TOOL_SET[23] F=INI[55]
     G90 G01 Z=INI[52] F=INI[56]
     MSG("接近工件中")
     MEAS=1 G90 G01 X=TOOL_SET[44] F=INI[65]
