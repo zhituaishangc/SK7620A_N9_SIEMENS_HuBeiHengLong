@@ -34,14 +34,14 @@ DWHEEL_RPM=WHEEL[1]*60000/($PI*WHEEL[0])
 
 IF (INI[36]==0) OR (INI[36]==2)
     R299=WHEEL_RPM
-    G4 F0.2
+    ;G4 F0.2
     M13
 ELSE
     M1=3 S1=WHEEL_RPM
 ENDIF
 IF (INI[37]==0) OR (INI[37]==2)
     R297=DWHEEL_RPM
-    G4 F0.2
+    ;G4 F0.2
     M63
 ELSE
     IF (INI[36]==0) OR (INI[36]==2)
@@ -60,9 +60,9 @@ ENDIF
 
 IF DRESSER[18]+DRESSER[19]+DRESSER[20]==0
     MSG("等待砂轮转速到位")
-    G4 F0.2
+    ;G4 F0.2
 ELSE
-    G4 F0.2
+    ;G4 F0.2
 ENDIF
 
 RET
